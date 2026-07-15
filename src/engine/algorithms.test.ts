@@ -9,7 +9,7 @@ describe('Algorithm Generators', () => {
     
     // It should at least start by yielding PLACE or MARK_VISITED
     expect(result.done).toBe(false);
-    expect(result.value?.type).toMatch(/PLACE|MARK_VISITED|REMOVE|CLEAR_VISITED/);
+    expect((result.value as any)?.type).toMatch(/PLACE|MARK_VISITED|REMOVE|CLEAR_VISITED/);
     
     // Run it to completion (or just a few steps to prevent infinite loop in tests)
     let steps = 0;
